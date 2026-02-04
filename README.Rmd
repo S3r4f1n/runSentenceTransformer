@@ -70,32 +70,6 @@ my_texts <- c("Sample text 1", "Sample text 2")
 results <- embed_func(my_texts)
 ```
 
-## Main Functions
-
-### `download_model(model, model_path)`
-Downloads a model from Hugging Face Hub to the local cache directory. The function downloads necessary files such as `config.json`, `tokenizer.json`, and `model.safetensors`.
-
-### `embed(data, model, model_path)`
-Generates embeddings for character vectors using a specified model. This is the primary function for converting text to numerical embeddings.
-
-### `load_model_get_embed_function(model, model_path)`
-Loads a model from disk and returns a function that can be used to generate embeddings. Useful when you need to repeatedly embed text with the same model.
-
-### `local_model_path(model_identifier, create_dir)`
-Manages the local path where models are stored in the cache directory. Creates the path structure if it doesn't exist.
-
-## Supported Models
-
-Currently, the package supports BERT-based models that have the following files:
-- `config.json` - Model configuration
-- `tokenizer.json` - Tokenizer configuration and vocabulary
-- `model.safetensors` - Model weights in safetensors format
-
-Popular compatible models include:
-- `sentence-transformers/all-MiniLM-L6-v2`
-- `sentence-transformers/all-mpnet-base-v2`
-- `sentence-transformers/bert-base-nli-mean-tokens`
-
 ## How It Works
 
 The package leverages Rust for performance-critical operations:
