@@ -1,3 +1,9 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # runSentenceTransformer
 
 An R package that provides access to sentence transformer models using Rust backend for high-performance text embeddings. The package enables users to download, load, and use BERT-based models from Hugging Face for generating text embeddings directly in R (through extendr/rextendr).
@@ -6,6 +12,7 @@ An R package that provides access to sentence transformer models using Rust back
 
 - Download BERT models directly from Hugging Face Hub
 - Support for BERT-based models with mean pooling
+- High-performance text processing using Rust backend
 - Easy integration with R workflows
 - Local model caching for faster subsequent access
 
@@ -18,11 +25,11 @@ To install this package, you'll need:
 - Internet connection for downloading models (first use)
 
 ```r
-# clone repo and then
-# Install from source
+# Clone repo and then install from source
 devtools::install()
 ```
-*note* The debug flag in `tools/config.R` is turned off (hard coded) to get the faster rust `--release` builds. I don't think this affects the R part of package developement and is only needed due to rextendr.
+
+*note* The debug flag in `tools/config.R` is turned off (hard coded) to get the faster rust `--release` builds. This ensures optimal performance for the Rust backend and is only needed due to rextendr.
 
 ## Quick Start
 
@@ -33,7 +40,7 @@ First, download a BERT-based sentence transformer model from Hugging Face:
 ```r
 library(runSentenceTransformer)
 
-# Download a popular sentence transformer model.
+# Download a popular sentence transformer model
 download_model("sentence-transformers/all-MiniLM-L6-v2")
 ```
 
@@ -51,6 +58,7 @@ dim(embeddings)
 ```
 
 ### 3. Create an Embedding Function
+
 Alternatively, you can create a dedicated embedding function:
 
 ```r
@@ -112,4 +120,4 @@ Contributions are welcome! Feel free to submit issues or pull requests on GitHub
 
 ## License
 
-MIT License (see LICENSE file for details)
+GNU General Public License

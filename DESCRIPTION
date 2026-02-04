@@ -11,4 +11,5 @@ RoxygenNote: 7.3.2
 Config/rextendr/version: 0.4.1
 SystemRequirements: Cargo (Rust's package manager), rustc
 Depends: 
-    R (>= 4.2)
+    R (>= 4.2),
+    utils
