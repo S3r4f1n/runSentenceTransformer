@@ -10,14 +10,31 @@
 #' @useDynLib runSentenceTransformer, .registration = TRUE
 NULL
 
-#' only Bert models a currently supported and the following files are expected:
-#' - config.json
-#' - tokenizer.json
-#' - model.safetensors
-#' @internal
+#' Generate String Embeddings Using BERT Model
+#'
+#' This function generates embeddings for strings using a pre-loaded BERT model.
+#' It expects the model files (config.json, tokenizer.json, and model.safetensors) to be available at the specified path.
+#'
+#' @param x A character vector containing the text data to embed
+#' @param path A character string specifying the path to the BERT model directory containing config.json, tokenizer.json, and model.safetensors
+#' @return A list of numerical vectors representing the embeddings for each input string
+#' @details
+#' Only BERT models are currently supported and the following files are expected:
+#' \itemize{
+#'   \item config.json
+#'   \item tokenizer.json
+#'   \item model.safetensors
+#' }
+#' @keywords internal
 string_embedding <- function(x, path) .Call(wrap__string_embedding, x, path)
 
-#' @internal
+#' Resolve Full Path
+#'
+#' This function resolves a relative path to its canonical absolute representation.
+#'
+#' @param path A character string representing a file path to resolve
+#' @return A character string with the canonical absolute path
+#' @keywords internal
 rust_pwd <- function(path) .Call(wrap__rust_pwd, path)
 
 

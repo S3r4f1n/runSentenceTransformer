@@ -2,20 +2,28 @@
 % Please edit documentation in R/extendr-wrappers.R
 \name{string_embedding}
 \alias{string_embedding}
-\title{only Bert models a currently supported and the following files are expected:
-\itemize{
-\item config.json
-\item tokenizer.json
-\item model.safetensors
-}}
+\title{Generate String Embeddings Using BERT Model}
 \usage{
 string_embedding(x, path)
 }
+\arguments{
+\item{x}{A character vector containing the text data to embed}
+
+\item{path}{A character string specifying the path to the BERT model directory containing config.json, tokenizer.json, and model.safetensors}
+}
+\value{
+A list of numerical vectors representing the embeddings for each input string
+}
 \description{
-only Bert models a currently supported and the following files are expected:
+This function generates embeddings for strings using a pre-loaded BERT model.
+It expects the model files (config.json, tokenizer.json, and model.safetensors) to be available at the specified path.
+}
+\details{
+Only BERT models are currently supported and the following files are expected:
 \itemize{
 \item config.json
 \item tokenizer.json
 \item model.safetensors
 }
 }
+\keyword{internal}
