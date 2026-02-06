@@ -4,6 +4,10 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/S3r4f1n/runSentenceTransformer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/S3r4f1n/runSentenceTransformer/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
 # runSentenceTransformer
 
 An R package that provides access to sentence transformer models using Rust backend. The package does load, and run BERT-based models locally. Useful for generating text embeddings directly in R.
