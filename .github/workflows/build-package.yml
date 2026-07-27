@@ -1,0 +1,23 @@
+# .github/workflows/build-package.yml
+name: Build Package
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - {os: windows-latest, arch: x64}
+          - {os: macos-latest, arch: x64}
+          - {os: ubuntu-latest, arch: x64}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+      - uses: r-lib/actions/pkg-install@v2
+      - run: Rscript -e 'devtools::build(binary = TRUE)'

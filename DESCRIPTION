@@ -1,9 +1,9 @@
 Package: runSentenceTransformer
-Title: What the Package Does (One Line, Title Case)
+Title: Runs Bert Based Sentence Transformer With A Rust Back End
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Serafin", "Schoch", , "serafin.schoch@mailbox.org", role = c("aut", "cre"))
+Description: This Package is a minimal setup to run Bert based sentence Transformers locally (on the machine) in a R native environement. The backend is implemented in Rust and powered by the Candle crate. In R-fashion the embedding is parallelzied/vectorized function. The models are only run on local machine, tough the package provides a convenience function to download model paremters from Huggingface-Hub. This Package has a minimal scope and only runs models with the following three files: config.json, tokenizer.json, model.safetensor.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

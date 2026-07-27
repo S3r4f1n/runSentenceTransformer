@@ -77,7 +77,7 @@ download_model <- function(
     target_file <- file.path(model_path, file)
     download_success <- tryCatch(
       {
-        utils::download.file(file_url, target_file, mode = "wb", quiet = TRUE)
+        curl::curl_download(file_url, target_file, quiet = TRUE)
         TRUE
       },
       warning = function(w) {
