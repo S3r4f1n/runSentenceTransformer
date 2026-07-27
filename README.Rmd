@@ -35,7 +35,7 @@ devtools::install()
 
 ### 1. Get a Model
 
-Any bert based Model with the following files is supported:
+Any bert based Model with the following files should be supported:
 - config.json
 - tokenizer.json
 - model.safetensor
@@ -59,16 +59,13 @@ Once the model is downloaded, you can generate embeddings for your text:
 # Generate embeddings directly
 texts <- c("Hello world", "How are you?", "This is a sample sentence.")
 embeddings <- embed(texts, "sentence-transformers/all-MiniLM-L6-v2")
-
-# View the dimensions of the embeddings
-dim(embeddings)
 ```
 ## How It Works
 
 The package leverages Rust for performance-critical operations:
 
 1. **R Frontend**: R functions handle user interface, model downloading, and path management
-2. **Rust Backend**: Text processing (tokenization) and embedding (neral network inference) generation using Candle (Rust ML framework).
+2. **Rust Backend**: Text processing (tokenization) and embedding (neural network inference) generation using Candle (Rust ML framework).
 3. **ExtendR**: Integration between R and Rust via the extendr-api crate and rextendr R-package
 
 ## Limitations
